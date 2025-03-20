@@ -45,7 +45,9 @@ class XboxController(object):
         bty = self.Y
         rb = self.RightBumper
         lb = self.LeftBumper
-        return x, y, x2, y2, a, b, btx, bty, rb, lb
+        tr = self.RightTrigger
+        tl = self.LeftTrigger
+        return x, y, x2, y2, a, b, btx, bty, rb, lb, tr, tl
 
 
     def _monitor_controller(self):
