@@ -1,6 +1,7 @@
 from xboxcontroller import XboxController
 import socket
 import time
+from influx import Influx
 
 UDP_IP = "192.168.8.104"
 UDP_PORT = 12000
@@ -8,6 +9,9 @@ UDP_PORT = 12000
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 xbox = XboxController()
+
+infl = Influx(xbox=xbox)
+infl.start()
 
 while True:
     #x, y, x2, y2, a, b, btx, bty, rb, lb, tr, tl = xbox.read()
